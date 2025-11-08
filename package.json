@@ -1,0 +1,21 @@
+{
+  "name": "serverless-email-api",
+  "version": "1.0.0",
+  "description": "Serverless Framework email sender API with Nodemailer and offline support.",
+  "main": "handler.js",
+  "scripts": {
+    "start": "npx serverless offline",
+    "offline": "npx serverless offline",
+    "deploy": "npx serverless deploy",
+    "lint": "echo \"No linting configured\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.14",
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.2"
+  }
+}
+

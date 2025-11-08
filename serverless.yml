@@ -1,0 +1,26 @@
+service: serverless-email-api
+
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: dev
+  environment:
+    SENDER_EMAIL: ${env:SENDER_EMAIL}
+    SENDER_PASSWORD: ${env:SENDER_PASSWORD}
+
+plugins:
+  - serverless-offline
+
+functions:
+  sendEmail:
+    handler: handler.sendEmail
+    timeout: 30
+    events:
+      - httpApi:
+          path: /send-email
+          method: post
+
